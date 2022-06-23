@@ -1,0 +1,140 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-white-opacity-1: #FFFFFF33;
+    --color-white-opacity-2: #FFFFFF29;
+    --color-black: #000000;
+    --color-black-opacity-1: #00000066;
+    --color-black-opacity-2: #00000040;
+    --color-gray-1: #28272C;
+    --color-gray-2: #6A6A6A;
+    --color-gray-3: #B2B2B2;
+    --color-gray-4: #D1D1D1;
+    --color-red: #FF0000;
+    --color-red-opacity-1: #FF00004D;
+
+    font-family: 'Nunito Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.page-header-and-banner {
+    --circle-diameter: 55px;
+
+    background-image: url(../images/banner.png);
+    height: calc(100vh - var(--circle-diameter) / 2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.page-header-and-banner::before {
+    content: "";
+    background-color: var(--color-black);
+    opacity: 30%;
+    position: absolute;
+    inset: 0;
+}
+
+.page-header-and-banner::after {
+    content: "";
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    border-radius: 1000px;
+    background-color: var(--color-red);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    background-image: url(../images/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page-header,
+.page-banner,
+.page-header-and-banner::after {
+    z-index: 1;
+}
+
+.page-header > .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-menu__list {
+    display: flex;
+}
+
+.page-menu__list-link {
+    color: var(--color-white);
+}
+
+.page-banner {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.page-banner > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page-banner__title,
+.page-banner__description {
+    color: var(--color-white);
+}
+
+.page-banner__title {
+    font-weight: 900;
+    font-size: 90px;
+    line-height: 90px;
+    text-transform: uppercase;
+    text-shadow: 0 3px 6px var(--color-black-opacity-2);
+}
+
+.page-banner__description {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 40px;
+}
+
+.page-banner--links {
+    margin-top: 54px;
+}
+
+.page-banner__link {
+    padding: 22px 55px;
+    border-radius: 1000px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.page-banner__link + .page-banner__link {
+    margin-left: 25px;
+}
+
+.page-banner__link--primary {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    box-shadow: 0 3px 6px var(--color-red-opacity-1);
+}
+
+.page-banner__link--secondary {
+    background-color: var(--color-white);
+    color: var(--color-red);
+}
